@@ -7,6 +7,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,10 +16,10 @@ import java.util.List;
 //@Table(name = "users")
 public class Users {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-
-    private Long id;
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = IDENTITY)
+    private Integer id;
 
     @OneToMany(mappedBy = "users")
     private List<Article> articles;

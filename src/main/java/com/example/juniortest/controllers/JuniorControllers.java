@@ -25,10 +25,18 @@ private final VoiddRepository voiddRepository;
 
     @GetMapping("/add")
     public String userAdd() {
-
+String usr = "User ";
         Users users = new Users();
-        users.setName("rrffss");
+//        users.setName(usr);
         users.setAge(44);
+        for (Integer i = 1; i <= 10; i++) {
+//            users.setId(i.longValue());
+            usr = usr + i.toString();
+            users.setName(usr);
+            addUser.save(users);
+            usr = "User ";
+        }
+    //    addUser.save(users);
 
 
         Voidd voidd = new Voidd();
