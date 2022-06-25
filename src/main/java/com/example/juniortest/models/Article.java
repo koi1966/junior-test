@@ -13,14 +13,14 @@ import javax.persistence.*;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
     private Long id;
 
     private String text;
-    private String color;
+    private Color color;
 
+//    private Long user_id;
     @ManyToOne(optional = false)
+//    @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users users;
-
+    private User user;
 }

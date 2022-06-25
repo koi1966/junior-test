@@ -13,15 +13,15 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Setter
 @NoArgsConstructor
 @Entity
-//@Table(name = "users")
-public class Users {
+@Table(name = "users")
+public class User {
     @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
 //    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "user")
     private List<Article> articles;
 
     private String name;

@@ -1,21 +1,24 @@
 package com.example.juniortest.controllers;
 
-import com.example.juniortest.models.Users;
-import com.example.juniortest.models.Voidd;
-import com.example.juniortest.models.repo.VoiddRepository;
+import com.example.juniortest.models.User;
 import com.example.juniortest.models.repo.AddUser;
 import com.example.juniortest.models.repo.UserRepository;
+import com.example.juniortest.models.repo.VoiddRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @Slf4j   // Логер
-@Controller
+@RestController
 public class JuniorControllers {
-private final AddUser addUser;
-private final UserRepository userRepository;
-private final VoiddRepository voiddRepository;
+    private final AddUser addUser;
+    private final UserRepository userRepository;
+    private final VoiddRepository voiddRepository;
+
 
     public JuniorControllers(AddUser addUser, UserRepository userRepository, VoiddRepository voiddRepositoryRepository) {
         this.addUser = addUser;
@@ -23,26 +26,17 @@ private final VoiddRepository voiddRepository;
         this.voiddRepository = voiddRepositoryRepository;
     }
 
-    @GetMapping("/add")
-    public String userAdd() {
-String usr = "User ";
-        Users users = new Users();
-//        users.setName(usr);
-        users.setAge(44);
-        for (Integer i = 1; i <= 10; i++) {
-//            users.setId(i.longValue());
-            usr = usr + i.toString();
-            users.setName(usr);
-            addUser.save(users);
-            usr = "User ";
-        }
-    //    addUser.save(users);
+    @PostMapping("/add")
+    public List<User> userAdd(@RequestParam String s) {
+//    public List<User> userAdd() {
 
 
-        Voidd voidd = new Voidd();
-        voidd.setName(" eee");
-        voidd.setAge(33);
-        voiddRepository.save(voidd);
-        return " трям ";
+        List<User> usr = userRepository.findAll();
+//        Color color = Color.getRandomColor();
+//        Color[] colors = Color.values()userRepository = {$Proxy104@10012} "org.springframework.data.jpa.repository.support.SimpleJpaRepository@1beb1c59";
+//        colors.length;
+
+//        color.getDeclaringClass();
+        return usr;
     }
 }
