@@ -4,6 +4,7 @@ import com.example.juniortest.mapper.Mapper;
 import com.example.juniortest.models.User;
 import com.example.juniortest.models.dto.UserDTO;
 import com.example.juniortest.repo.UserRepository;
+import com.example.juniortest.servise.AddUser;
 import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,12 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class UserController {
-    private final UserRepository userRepository;
+
+    private final AddUser addUser;
     private final Mapper mapper = Mappers.getMapper(Mapper.class);
 
-    public UserController(UserRepository userRepository) {
+    public UserController( AddUser addUser) {
 
-        this.userRepository = userRepository;
+        this.addUser = addUser;
     }
 
     @PostMapping(value = "/user")
@@ -26,10 +28,8 @@ public class UserController {
 
         User user = mapper.userDtoToUser(dto);
 
-        User saved = userRepository.save(user);
+        User saved = addUser.AddUsers(user);
         log.info("UserDto: {}, saved user: {}", dto, saved);
-
-//        List<User> usr = userRepository.findAll();
 
         return mapper.userToUserDto(saved);
     }
