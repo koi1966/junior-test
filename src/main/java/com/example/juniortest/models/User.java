@@ -20,8 +20,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
-    @OneToMany(mappedBy = "user")
 
+    @OneToMany(mappedBy = "user")
     @ToString.Exclude
     private List<Article> articles;
 

@@ -24,7 +24,6 @@ public class ArticleController {
 
     @PostMapping(value = "/article")
     public ArticleDTO saveArticle(@RequestBody ArticleDTO articleDTO) {
-
         Article article = mapper.articleDtoToArticle(articleDTO);
 
         Article savedArt = addArticle.AddArticle(article);
