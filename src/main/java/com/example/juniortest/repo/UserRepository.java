@@ -1,4 +1,4 @@
-package com.example.juniortest.models.repo;
+package com.example.juniortest.repo;
 
 import com.example.juniortest.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
