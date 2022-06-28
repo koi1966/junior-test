@@ -17,7 +17,7 @@ public class ArticleController {
     private AddArticle addArticle;
     private final Mapper mapper = Mappers.getMapper(Mapper.class);
 
-    public ArticleController( AddArticle addArticle) {
+    public ArticleController(AddArticle addArticle) {
 
         this.addArticle = addArticle;
     }

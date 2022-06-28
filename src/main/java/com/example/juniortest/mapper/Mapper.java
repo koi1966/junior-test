@@ -8,10 +8,13 @@ import com.example.juniortest.models.dto.UserDTO;
 @org.mapstruct.Mapper
 public interface Mapper {
     UserDTO userToUserDto(User user);
+
     User userDtoToUser(UserDTO userDto);
 
     ArticleDTO articleToArticleDTO(Article article);
+
     Article articleDtoToArticle(ArticleDTO articleDTO);
+
 
 
 }

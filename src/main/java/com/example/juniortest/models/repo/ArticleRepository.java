@@ -1,4 +1,4 @@
-package com.example.juniortest.repo;
+package com.example.juniortest.models.repo;
 
 import com.example.juniortest.models.Article;
 import org.springframework.data.repository.CrudRepository;
