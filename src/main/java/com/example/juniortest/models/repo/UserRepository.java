@@ -10,6 +10,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query(nativeQuery = true,
-            value = "SELECT * FROM user WHERE AGE > :age")
+            value = "SELECT * FROM users WHERE age > :age")
     List<User> findByUserAge(@Param("age") long age);
 }

@@ -33,9 +33,9 @@ public class UserController {
         return mapper.userToUserDto(saved);
     }
     @GetMapping("/userage")
-    public String searchUser(@RequestParam int age) {
+    public List<UserDTO> searchUser(@RequestParam int age) {
         List<User> user = servisesUser.userList(age);
-        return mapper.userToUserDto(user);
+        return mapper.map(user);
     }
 
 }
