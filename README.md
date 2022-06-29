@@ -8,6 +8,7 @@ https://stackoverflow.com/questions/70483299/hibernate-disable-alter-table-to-ad
 https://stackoverflow.com/questions/221379/hibernate-hbm2ddl-auto-update-in-production
 
 https://java-online.ru/hibernate-entities.xhtml
+https://function-x.ru/sql_subqueries.html
 
 
 Окай, потрібно зробити сервер на наступних технологіях: Java 8, Spring Boot, Spring Data, Apache Maven. 
@@ -31,4 +32,37 @@ User має такі поля: id, name, age. Article має такі поля: 
 Якісь приклади можна переглянути скажімо в нас аккаунті компанії 
 Tech1: https://github.com/tech1-io/tech1-temple-java + 
 https://github.com/tech1-io/tech1-skeletons. 
-Якщо буде тобі щось корисне не поскупись на зірочку 🙂 
+Якщо буде тобі щось корисне не поскупись на зірочку 🙂
+
+SELECT * FROM USERS
+WHERE ID IN (SELECT
+user_id FROM article WHERE color='ORANGE')
+
+
+SELECT users.id, users.name, users.age, article.color, article.text 
+FROM users INNER JOIN article 
+ON users.ID = article.user_id 
+where article.color = 'GREEN'
+
+SELECT users.id, users.name, users.age, article.color, article.text
+FROM users LEFT OUTER JOIN article
+ON users.ID = article.user_id 
+
+SELECT users.id, users.name, users.age, article.color, article.text
+FROM users INNER JOIN article
+ON users.ID = article.user_id
+ORDER BY users.id
+
+select user_id, count(*) as kk
+from article
+group by  user_id
+having count(*) > 3 
+
+
+select *
+from users
+where
+id in  (select user_id
+from article
+group by  user_id
+having count(*) > 3)

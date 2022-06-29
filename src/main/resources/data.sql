@@ -71,7 +71,7 @@ VALUES ('Text 18', 'VIOLET', 7);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 19', 'GREEN', 3);
 INSERT INTO article (text, color, user_id)
-VALUES ('Text 20', 'INDIGO', 3);
+VALUES ('Text 20', 'INDIGO', 7);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 21', 'GREEN', 8);
 INSERT INTO article (text, color, user_id)
@@ -85,7 +85,7 @@ VALUES ('Text 25', 'RED', 9);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 26', 'GREEN', 10);
 INSERT INTO article (text, color, user_id)
-VALUES ('Text 27', 'INDIGO', 3);
+VALUES ('Text 27', 'INDIGO', 7);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 28', 'RED', 13);
 INSERT INTO article (text, color, user_id)
@@ -97,17 +97,17 @@ VALUES ('Text 31', 'ORANGE', 12);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 32', 'RED', 14);
 INSERT INTO article (text, color, user_id)
-VALUES ('Text 33', 'GREEN', 3);
+VALUES ('Text 33', 'GREEN', 11);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 34', 'RED', 3);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 35', 'GREEN', 3);
 INSERT INTO article (text, color, user_id)
-VALUES ('Text 36', 'VIOLET', 3);
+VALUES ('Text 36', 'VIOLET', 11);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 37', 'ORANGE', 3);
 INSERT INTO article (text, color, user_id)
-VALUES ('Text 38', 'RED', 3);
+VALUES ('Text 38', 'RED', 11);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 39', 'INDIGO', 3);
 INSERT INTO article (text, color, user_id)
