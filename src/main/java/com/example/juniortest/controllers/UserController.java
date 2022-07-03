@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Slf4j
+@RequestMapping("/user")
 @RestController
 public class UserController {
 
@@ -22,7 +23,7 @@ public class UserController {
         this.servisesUser = addUser;
     }
 
-    @PostMapping(value = "/user")
+    @PostMapping(value = "/add")
     public UserDTO saveUser(@RequestBody UserDTO dto) {
 
         User user = mapper.userDtoToUser(dto);
@@ -32,10 +33,19 @@ public class UserController {
 
         return mapper.userToUserDto(saved);
     }
+
     @GetMapping("/userage")
     public List<UserDTO> searchUser(@RequestParam int age) {
+        log.info("All users age > {}", age);
         List<User> user = servisesUser.userList(age);
         return mapper.map(user);
     }
 
+
+    @GetMapping("/userartic")
+    public List<UserDTO> searchCountUserInArticle(@RequestParam int count) {
+        log.info("All users in article > {}", count);
+        List<User> user = servisesUser.searchUserCountArticle(count);
+        return mapper.map(user);
+    }
 }

@@ -13,7 +13,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
             value = "SELECT * FROM users WHERE age > :age")
     List<User> findByUserAge(@Param("age") long age);
 
+
     @Query(nativeQuery = true,
-            value = "select * from users where id in  (select user_id from article group by  user_id having count(*) > 3)")
-            List<User> findByArticleToUser(@Param("age") long age);
+            value = "select * from users where id in  (select user_id from article group by  user_id having count(*) >:cou)")
+    List<User> findByUserInArticleCount(@Param("cou") int cou);
+
 }

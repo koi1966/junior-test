@@ -24,4 +24,9 @@ public class ServisesUser {
     public List<User> userList(int age) {
      return userRepository.findByUserAge(age);
     }
+
+    public List<User> searchUserCountArticle(int cou) {
+        log.info("Search count {} ", cou);
+        return userRepository.findByUserInArticleCount(cou);
+    }
 }

@@ -8,9 +8,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
+@RequestMapping("/article")
 @RestController
 public class ArticleController {
 
@@ -22,7 +24,7 @@ public class ArticleController {
         this.addArticle = addArticle;
     }
 
-    @PostMapping(value = "/article")
+    @PostMapping(value = "/add")
     public ArticleDTO saveArticle(@RequestBody ArticleDTO articleDTO) {
         Article article = mapper.articleDtoToArticle(articleDTO);
 
