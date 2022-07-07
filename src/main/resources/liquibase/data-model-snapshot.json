@@ -1,0 +1,51 @@
+{
+  "snapshot": {
+    "created": "2022-07-07T16:49:19.363",
+    "database": {
+      "productVersion": "2.1.210 (2022-01-17)",
+      "shortName": "h2",
+      "majorVersion": "2",
+      "minorVersion": "1",
+      "user": "SA",
+      "productName": "H2",
+      "url": "jdbc:h2:mem:testdb"
+    },
+    "objects": {
+      "liquibase.structure.core.Catalog": [
+        {
+          "catalog": {
+            "default": true,
+            "name": "TESTDB",
+            "snapshotId": "2f65100"
+          }
+        }]
+      ,
+      "liquibase.structure.core.Schema": [
+        {
+          "schema": {
+            "catalog": "liquibase.structure.core.Catalog#2f65100",
+            "default": true,
+            "name": "PUBLIC",
+            "snapshotId": "2f65101"
+          }
+        }]
+      
+    },
+    "snapshotControl": {
+      "snapshotControl": {
+        "includedType": [
+          "liquibase.structure.core.Catalog",
+          "liquibase.structure.core.Column",
+          "liquibase.structure.core.ForeignKey",
+          "liquibase.structure.core.Index",
+          "liquibase.structure.core.PrimaryKey",
+          "liquibase.structure.core.Schema",
+          "liquibase.structure.core.Sequence",
+          "liquibase.structure.core.Table",
+          "liquibase.structure.core.UniqueConstraint",
+          "liquibase.structure.core.View"]
+        
+      }
+    }
+  }
+}
