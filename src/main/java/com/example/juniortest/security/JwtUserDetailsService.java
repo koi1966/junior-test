@@ -1,16 +1,18 @@
 package com.example.juniortest.security;
 
 import com.example.juniortest.models.UserJVT;
+import com.example.juniortest.security.jwt.JwtUser;
 import com.example.juniortest.servise.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class JwtUserDetailsService {
+public class JwtUserDetailsService implements UserDetailsService {
     private final UserService userService;
 
     @Autowired
@@ -26,10 +28,8 @@ public class JwtUserDetailsService {
             throw new UsernameNotFoundException("User with username: " + username + " not found");
         }
 
-
-//        JwtUser jwtUser = JwtUserFactory.create(user);
-        JwtUserDetailsService jwtUser = JwtUserF
-        log.info("IN loadUserByUsername - user with username: {} successfully loaded", username);
-        return jwtUser;
+//        JwtUser jwtUser = JwtUser.
+//        log.info("IN loadUserByUsername - user with username: {} successfully loaded", username);
+        return null;//jwtUser;
     }
 }
