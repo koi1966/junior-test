@@ -10,6 +10,9 @@ https://stackoverflow.com/questions/221379/hibernate-hbm2ddl-auto-update-in-prod
 https://java-online.ru/hibernate-entities.xhtml
 https://function-x.ru/sql_subqueries.html
 
+Создание Spring Security REST API с использованием JWT токена
+https://www.youtube.com/watch?v=yRnSUDx3Y8k
+
 
 Окай, потрібно зробити сервер на наступних технологіях: Java 8, Spring Boot, Spring Data, Apache Maven. 
 БД in-memory, скажімо H2. В базі даних зв'язок один до багатьох між User та Article. 
@@ -66,3 +69,16 @@ id in  (select user_id
 from article
 group by  user_id
 having count(*) > 3)
+
+
+Чтобы сохранить содержимое текстового файла в базу данных.
+
+
+Создать таблицу 
+Используйте java.io.Reader для чтения текстового файла
+Используйте JDBC API (PreparedStatement) для выполнения инструкции INSERT.
+String sql="INSERT INTO TableName (clobCol) VALUES (?)";
+PrepareStatement ps=connection.prepareStatement(sql);
+ps.setClob(1,readerObject);
+
+
