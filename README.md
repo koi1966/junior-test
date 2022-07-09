@@ -13,6 +13,7 @@ https://function-x.ru/sql_subqueries.html
 Создание Spring Security REST API с использованием JWT токена
 https://www.youtube.com/watch?v=yRnSUDx3Y8k
 
+https://www.h2database.com/html/features.html#in_memory_databases
 
 Окай, потрібно зробити сервер на наступних технологіях: Java 8, Spring Boot, Spring Data, Apache Maven. 
 БД in-memory, скажімо H2. В базі даних зв'язок один до багатьох між User та Article. 
