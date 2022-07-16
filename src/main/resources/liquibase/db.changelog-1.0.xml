@@ -74,6 +74,7 @@
 
             <column name="role_id" type="BIGINT">
             </column>
+
         </createTable>
     </changeSet>
 
