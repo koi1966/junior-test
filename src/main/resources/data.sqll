@@ -113,3 +113,7 @@ VALUES ('Text 39', 'INDIGO', 3);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 40', 'VIOLET', 3);
 
+INSERT INTO roles (name)
+VALUES ('ROLE_USER');
+INSERT INTO roles (name)
+VALUES ('ROLE_ADMIN');
