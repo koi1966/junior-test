@@ -1,6 +1,6 @@
 package com.example.juniortest.rest;
 
-import com.example.juniortest.dto.UserDto;
+import com.example.juniortest.dto.UserDtoJ;
 import com.example.juniortest.models.UserJVT;
 import com.example.juniortest.servise.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +22,14 @@ public class UserRestControllerV1 {
     }
 
     @GetMapping(value = "{id}")
-    public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") Long id){
+    public ResponseEntity<UserDtoJ> getUserById(@PathVariable(name = "id") Long id){
         UserJVT user = userService.findById(id);
 
         if(user == null){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
-        UserDto result = UserDto.fromUser(user);
+        UserDtoJ result = UserDtoJ.fromUser(user);
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
