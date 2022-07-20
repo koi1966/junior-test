@@ -117,3 +117,18 @@ INSERT INTO roles (name)
 VALUES ('ROLE_USER');
 INSERT INTO roles (name)
 VALUES ('ROLE_ADMIN');
+
+INSERT INTO usersj (id, username, email, first_name, last_name, password, created, update, status)
+VALUES (1, 'proselite','proselite@gmail.com','Oleg','Klymchuk','$2a$04$z6JZPctNHffC9MxtUl89D.8XSDIASDh6pbOS1/9ntmMd0ylJeRh6C','2022-07-20','2022-07-20','ACTIVE' );
+
+INSERT INTO roles (created, status, update, name)
+VALUES ('2022-07-20','ACTIVE','2022-07-20','ROLE_USER');
+INSERT INTO roles (created, status, update, name)
+VALUES ('2022-07-20','ACTIVE','2022-07-20','ROLE_ADMIN');
+
+
+
+
+
+test
+$2a$04$z6JZPctNHffC9MxtUl89D.8XSDIASDh6pbOS1/9ntmMd0ylJeRh6C
