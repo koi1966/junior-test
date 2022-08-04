@@ -41,7 +41,6 @@ public class UserController {
         return mapper.map(user);
     }
 
-
     @GetMapping("/userartic")
     public List<UserDTO> searchCountUserInArticle(@RequestParam int count) {
         log.info("All users in article > {}", count);
