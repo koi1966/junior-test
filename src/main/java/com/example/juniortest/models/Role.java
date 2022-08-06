@@ -1,6 +1,5 @@
-package com.example.juniortest.models.repo;
+package com.example.juniortest.models;
 
-import com.example.juniortest.models.Permission;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Set;
