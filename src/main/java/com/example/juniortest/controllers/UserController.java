@@ -23,6 +23,11 @@ public class UserController {
         this.servisesUser = addUser;
     }
 
+//    @GetMapping
+//    public List<User> getAll() {
+//        return DEVELOPERS;
+//    }
+
     @PostMapping(value = "/add")
     public UserDTO saveUser(@RequestBody UserDTO dto) {
 
@@ -46,6 +51,13 @@ public class UserController {
     public List<UserDTO> searchCountUserInArticle(@RequestParam int count) {
         log.info("All users in article > {}", count);
         List<User> user = servisesUser.searchUserCountArticle(count);
+        return mapper.map(user);
+    }
+
+    @GetMapping("/userall")
+    public List<UserDTO> searchCountUserInArticle() {
+        log.info("All users in article > {}");
+        List<User> user = servisesUser.searchAllUser();
         return mapper.map(user);
     }
 }

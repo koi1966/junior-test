@@ -18,4 +18,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
             value = "select * from users where id in  (select user_id from article group by  user_id having count(*) >:cou)")
     List<User> findByUserInArticleCount(@Param("cou") int cou);
 
+    @Query(nativeQuery = true,
+            value = "select * from users age > cou")
+    List<User> allsUser(@Param("cou") int cou);
+
 }

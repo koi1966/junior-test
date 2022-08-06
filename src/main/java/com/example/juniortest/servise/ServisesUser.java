@@ -29,4 +29,9 @@ public class ServisesUser {
         log.info("Search count {} ", cou);
         return userRepository.findByUserInArticleCount(cou);
     }
+
+    public List<User> searchAllUser() {
+        log.info("Search count all users{} ");
+        return userRepository.findAll();
+    }
 }
