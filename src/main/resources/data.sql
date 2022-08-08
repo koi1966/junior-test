@@ -1,3 +1,9 @@
+INSERT INTO users (name, last_name, email, age, role, status,password)
+VALUES ('admin', 'Klymchyk', 'centavr@ukr.net', 25, 'ADMIN', 'ACTIVE','$2a$12$cSYmLHKiWi/Aa/knk8uJMOoRHyaZ1PNapnmQAY/n4U2Og0Uz3MtJe');
+INSERT INTO users (name, last_name, email, age, role, status,password)
+VALUES ('user', 'UsrOk', 'userok@ukr.net', 35, 'USER', 'ACTIVE','$2a$12$HYUn9HAHUjN6MFBppvVDBO8Lc9jk/lM5MIFKDIuvpe3KQACJcagw.');
+INSERT INTO users (name, last_name, email, age, role, status,password)
+VALUES ('User2', 'UsrOk2', 'userok2@ukr.net', 45, 'USER', 'BANNED','$2a$12$rVuOaiO4nQeDMhEf6sTFIOdn/1xZs6QVVbTRBkKFZp4Ni.T1wMY2K');
 INSERT INTO users (name, age)
 VALUES ('Oliver', 25);
 INSERT INTO users (name, age)
