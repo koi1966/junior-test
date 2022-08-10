@@ -25,7 +25,7 @@ public class DeveloperRestControllerV1 {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('developers:read')")
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     public Developer getById(@PathVariable Long id) {
         return DEVELOPERS.stream()
                 .filter(developer -> developer.getId().equals(id))
@@ -34,7 +34,7 @@ public class DeveloperRestControllerV1 {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('developers:write')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Developer create(@RequestBody Developer developer) {
         this.DEVELOPERS.add(developer);
         return developer;

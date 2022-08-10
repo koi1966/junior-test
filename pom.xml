@@ -14,7 +14,11 @@
     <name>junior-test</name>
     <description>junior-test</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
+<!--        <java.version>1.8</java.version>-->
+        <!--        <java.version>11</java.version>-->
+        <!--        <mysql.connector.version>8.0.21</mysql.connector.version>-->
+<!--        <jjwt.version>0.11.5</jjwt.version>-->
     </properties>
     <dependencies>
         <dependency>
@@ -47,6 +51,13 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+<!--            <version>${jjwt.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
