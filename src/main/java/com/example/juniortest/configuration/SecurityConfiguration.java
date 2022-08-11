@@ -30,18 +30,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
+                .httpBasic().disable()
+
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
-//                .and()
-//                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
-//                .antMatchers("/h2-console/**").permitAll()
-                .antMatchers("/api/v1/auth/login").permitAll()
+                .antMatchers("/","/h2-console/**","/api/v1/auth/login").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
-                .apply(jwtConfigurer);
+                .apply(jwtConfigurer)
+                .and()
+                .headers().frameOptions().disable();
+
 
 //                .httpBasic();
 //        http
@@ -77,4 +78,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(12);
     }
+
 }
