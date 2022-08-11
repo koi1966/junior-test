@@ -32,7 +32,7 @@ public class UserController {
 //    }
 
     @PostMapping(value = "/add")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('developers:write')")
     public UserDTO saveUser(@RequestBody UserDTO dto) {
 
         User user = mapper.userDtoToUser(dto);
@@ -44,7 +44,7 @@ public class UserController {
     }
 
     @GetMapping("/userage")
-    @PreAuthorize("hasAuthority('developers:write')")
+    @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchUser(@RequestParam int age) {
         log.info("All users age > {}", age);
         List<User> user = servisesUser.userList(age);
@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @GetMapping("/userartic")
-    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchCountUserInArticle(@RequestParam int count) {
         log.info("All users in article > {}", count);
         List<User> user = servisesUser.searchUserCountArticle(count);
@@ -60,6 +60,7 @@ public class UserController {
     }
 
     @GetMapping("/userall")
+    @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchCountUserInArticle() {
         log.info("All users in article > {}");
         List<User> user = servisesUser.searchAllUser();
