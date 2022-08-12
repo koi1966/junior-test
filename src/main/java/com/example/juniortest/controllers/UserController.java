@@ -43,7 +43,7 @@ public class UserController {
         return mapper.userToUserDto(saved);
     }
 
-    @GetMapping("/userage")
+    @GetMapping("/age")
     @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchUser(@RequestParam int age) {
         log.info("All users age > {}", age);
@@ -51,7 +51,7 @@ public class UserController {
         return mapper.map(user);
     }
 
-    @GetMapping("/userartic")
+    @GetMapping("/countartic")
     @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchCountUserInArticle(@RequestParam int count) {
         log.info("All users in article > {}", count);

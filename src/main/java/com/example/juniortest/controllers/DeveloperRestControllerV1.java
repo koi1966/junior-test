@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
-@RequestMapping("/api/v1/developers")
+@RequestMapping("/developers")
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class DeveloperRestControllerV1 {
     private final List<Developer> DEVELOPERS = Stream.of(

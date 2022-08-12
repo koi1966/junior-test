@@ -35,37 +35,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/","/h2-console/**","/api/v1/auth/login").permitAll()
+//                .antMatchers("/","/h2-console/**","/api/v1/auth/login").permitAll()
+                .antMatchers("/","/h2-console/**","/login").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .apply(jwtConfigurer)
                 .and()
                 .headers().frameOptions().disable();
-
-
-//                .httpBasic();
-//        http
-//                .csrf().disable()
-//                .authorizeRequests().antMatchers("/").permitAll()
-//                .and()
-//                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
-//                .anyRequest()
-//                .authenticated()
-//                .and()
-//                .formLogin()
-//                .loginPage("/login").permitAll()
-//                .defaultSuccessUrl("/success")
-//                .and()
-//                .logout()
-//                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))
-//                .invalidateHttpSession(true)
-//                .clearAuthentication(true)
-//                .deleteCookies("JSESSIONID")
-//                .logoutSuccessUrl("/login");
-        ;
-
-//        http.headers().frameOptions().disable();
     }
 
     @Bean
