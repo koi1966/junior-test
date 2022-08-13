@@ -9,10 +9,10 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class ServisesUser {
+public class ServiseUser {
     private final UserRepository userRepository;
 
-    public ServisesUser(UserRepository userRepository) {
+    public ServiseUser(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

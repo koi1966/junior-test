@@ -17,13 +17,24 @@ User має такі поля: id, name, age. Article має такі поля: 
 На старті аплікації в БД повинно добавлятися 5-10 випадкових Users з Articles. 
 Потрібно зробити наступний АРІ:
 1/ Дістати всіх Users, в яких age більше за якесь значення
+Ok.
 2/ Дістати всіх Users з Articles, в яких color якесь певне значення з enum-а
+
 3/ Дістати унікальні name з Users, в яких більше ніж 3 Articles
+Ok.
 4/ Зберегти User
+Ok.
 5/ Зберегти Article
+Ok.
 6/ Також потрібно зробити наступний тип security: JWT-based
-7/ Також потрібно написати 1-2 JUnit тести на будь який з цих методів АРІ (на контролери, на сервіси, на ДАО-рівень). 
-Тести повинні бути (!) якісні
+To run a job with Spring's JWT-based capabilities that allow you to test applications,
+documentation used:  https://jwt.io/introduction
+
+7/ Також потрібно написати 1-2 JUnit тести на будь який з цих методів АРІ (на контролери, на сервіси, 
+на ДАО-рівень). Тести повинні бути (!) якісні
+To run a job with Spring's Test capabilities that allow you to test applications, documentation 
+used: https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
+
 
 Залити цей код на GitHub і написати README як проект запускати
 Створити колекцію в Postman або написати запити за допомогою curl тулзи, щоб можна було легко потестувати 
@@ -43,6 +54,7 @@ SELECT users.id, users.name, users.age, article.color, article.text
 FROM users INNER JOIN article 
 ON users.ID = article.user_id 
 where article.color = 'GREEN'
+
 
 SELECT users.id, users.name, users.age, article.color, article.text
 FROM users LEFT OUTER JOIN article
@@ -66,3 +78,7 @@ id in  (select user_id
 from article
 group by  user_id
 having count(*) > 3)
+
+To run a job with Spring's Test capabilities that allow you to test applications,
+documentation used:
+https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
