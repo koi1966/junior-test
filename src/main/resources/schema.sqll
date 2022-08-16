@@ -1,0 +1,24 @@
+CREATE TABLE users
+(
+    id        LONG         NOT NULL AUTO_INCREMENT,
+    name      VARCHAR(128) NOT NULL,
+    age       int,
+    email     VARCHAR(128),
+    password  VARCHAR(128),
+    firstName VARCHAR(128),
+    lastName  VARCHAR(128),
+    role      VARCHAR(128),
+    status    VARCHAR(128),
+    PRIMARY KEY (id)
+
+);
+
+CREATE TABLE article
+(
+    id    LONG         NOT NULL,
+    text  VARCHAR(128) NOT NULL,
+    color VARCHAR(128),
+    user  LONG,
+    PRIMARY KEY (id)
+
+);

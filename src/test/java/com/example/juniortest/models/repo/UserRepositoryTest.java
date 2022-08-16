@@ -1,37 +1,43 @@
 package com.example.juniortest.models.repo;
 
 import com.example.juniortest.models.User;
-
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
-
+@SpringBootTest
 public class UserRepositoryTest {
 
-    private UserRepository userRepository;
+    private static final long ID = 1L;
+
+    @Autowired
+    private UserRepository repository;
 
     @Test
     void findByEmail() {
-       Optional<User> user = userRepository.findByEmail("admin@ukr.net");
-        assertNull(user);
+       Optional<User> user = repository.findByEmail("admin@ukr.net");
+        assertNotNull(user);
     //        Assertions.assertEquals("серпень", nameMonth);
         }
 
     @Test
     void addUser() {
-       User user = new User("admin", "Klymchyk", 25,"admin@ukr.net","0","0","0","0","0");
+        User mock = org.mockito.Mockito.mock(User.class);
+        when(mock.getId()).thenReturn(ID);
 
-       userRepository.save(user);
+        //        this.repository.findById(ID);
+        repository.save(mock);
+        List<User> actual = repository.findById(ID);
 
-//        Student student = new Student(1, "john");
-//        studentRepository.save(student);
-//
-//        Student student2 = studentRepository.findOne(1);
-//        assertEquals("john", student2.getName());
+        assertNotNull(actual);
+        assertEquals(mock, actual);
+
     }
 
 
