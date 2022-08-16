@@ -31,7 +31,7 @@ public class ServiseUser {
     }
 
     public List<User> searchAllUser() {
-        log.info("Search count all users{} ");
+        log.info("Search count all users ");
         return userRepository.findAll();
     }
 }
