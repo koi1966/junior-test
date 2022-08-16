@@ -22,7 +22,7 @@ public class UserRepositoryTest {
     @Test
     void findByEmail() {
        Optional<User> user = repository.findByEmail("admin@ukr.net");
-        assertNotNull(user);
+        assertNotNull(user.);
     //        Assertions.assertEquals("серпень", nameMonth);
         }
 
