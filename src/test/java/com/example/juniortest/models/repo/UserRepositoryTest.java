@@ -1,5 +1,6 @@
 package com.example.juniortest.models.repo;
 
+import com.example.juniortest.models.Status;
 import com.example.juniortest.models.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +29,22 @@ public class UserRepositoryTest {
 
     }
 
-
     @Test
     void addUser() {
 
+        User user = new User();
+        user.setName("oleg");
+        user.setAge(18);
+        user.setStatus(Status.valueOf("ACTIVE"));
+        user.setFirstName("User_1897");
+        user.setPassword("123456");
+        user.setEmail("uuaa@meta.ua");
+        repository.save(user);
 
+        User user_test = repository.findByEmail("uuaa@meta.ua").orElseGet(() -> new User());
+
+        assertEquals("123456", user_test.getPassword());
+        assertEquals("User_1897", user_test.getFirstName());
     }
-
 
 }

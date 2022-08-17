@@ -41,4 +41,11 @@ public class User {
     @Column(name = "status")
     private Status status;
 
+    public User(String name, int age, String email, Role role, Status status) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.role = role;
+        this.status = status;
+    }
 }
