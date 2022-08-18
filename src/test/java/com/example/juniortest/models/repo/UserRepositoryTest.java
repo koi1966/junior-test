@@ -6,8 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
 import java.util.Optional;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -25,6 +27,11 @@ public class UserRepositoryTest {
 
         assertTrue(user.isPresent());
         assertEquals("ADMIN", user.get().getRole().toString());
+
+        List<User> users = this.repository.findAll();
+        // Assert
+        assertThat(users).isNotNull();
+        assertThat(users).hasSize(20);
 
     }
 

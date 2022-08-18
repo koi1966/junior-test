@@ -17,7 +17,6 @@ class MapperImplTest {
     void userToUserDtoTest() {
 //given
         User user = new User();
-//        user.setId(1L);
         user.setName("oleg");
         user.setAge(18);
         user.setEmail("dedd@ddd.com");
