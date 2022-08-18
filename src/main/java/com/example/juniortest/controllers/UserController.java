@@ -3,7 +3,7 @@ package com.example.juniortest.controllers;
 import com.example.juniortest.mapper.Mapper;
 import com.example.juniortest.models.User;
 import com.example.juniortest.models.dto.UserDTO;
-import com.example.juniortest.servise.ServiseUser;
+import com.example.juniortest.servise.ServiceUser;
 import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,12 +18,12 @@ import java.util.List;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class UserController {
 
-    private final ServiseUser serviseUser;
+    private final ServiceUser serviceUser;
     private final Mapper mapper = Mappers.getMapper(Mapper.class);
 
-    public UserController(ServiseUser addUser) {
+    public UserController(ServiceUser addUser) {
 
-        this.serviseUser = addUser;
+        this.serviceUser = addUser;
     }
 
 //    @GetMapping
@@ -37,7 +37,7 @@ public class UserController {
 
         User user = mapper.userDtoToUser(dto);
 
-        User saved = serviseUser.AddUsers(user);
+        User saved = serviceUser.AddUsers(user);
         log.info("UserDto: {}, saved user: {}", dto, saved);
 
         return mapper.userToUserDto(saved);
@@ -47,7 +47,7 @@ public class UserController {
     @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchUser(@RequestParam int age) {
         log.info("All users age > {}", age);
-        List<User> user = serviseUser.userList(age);
+        List<User> user = serviceUser.userList(age);
         return mapper.map(user);
     }
 
@@ -55,15 +55,15 @@ public class UserController {
     @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchCountUserInArticle(@RequestParam int count) {
         log.info("All users in article > {}", count);
-        List<User> user = serviseUser.searchUserCountArticle(count);
+        List<User> user = serviceUser.searchUserCountArticle(count);
         return mapper.map(user);
     }
 
     @GetMapping("/userall")
     @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchCountUserInArticle() {
-        log.info("All users in article > {}");
-        List<User> user = serviseUser.searchAllUser();
+        log.info("All users in article >");
+        List<User> user = serviceUser.searchAllUser();
         return mapper.map(user);
     }
 }

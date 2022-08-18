@@ -24,7 +24,6 @@ public class UserRepositoryTest {
         Optional<User> user = repository.findByEmail("admin@ukr.net");
 
         assertTrue(user.isPresent());
-        assertEquals(true, user.isPresent());
         assertEquals("ADMIN", user.get().getRole().toString());
 
     }
@@ -41,10 +40,11 @@ public class UserRepositoryTest {
         user.setEmail("uuaa@meta.ua");
         repository.save(user);
 
-        User user_test = repository.findByEmail("uuaa@meta.ua").orElseGet(() -> new User());
+        User userTest = repository.findByEmail("uuaa@meta.ua").orElseGet(User::new);
 
-        assertEquals("123456", user_test.getPassword());
-        assertEquals("User_1897", user_test.getFirstName());
+        assertEquals(user.getPassword(), userTest.getPassword());
+        assertEquals( user.getEmail(), userTest.getEmail());
+
     }
 
 }

@@ -5,17 +5,13 @@ import com.example.juniortest.models.User;
 import com.example.juniortest.models.dto.UserDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mapstruct.factory.Mappers;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class MapperImplTest {
 
-     private final Mapper mapper;
-
-    MapperImplTest(MapperImpl mapperUnderTest) {
-        this.mapper = mapperUnderTest;
-    }
-
+    private final Mapper mapper = Mappers.getMapper(Mapper.class);
 
     @Test
     void userToUserDtoTest() {
@@ -25,8 +21,7 @@ class MapperImplTest {
         user.setName("oleg");
         user.setAge(18);
         user.setEmail("dedd@ddd.com");
-        user.setStatus(Status.valueOf("ACTIVE"));
-        user.setStatus(Status.valueOf("ACTIVE"));
+        user.setStatus(Status.ACTIVE);
 
         //when
         UserDTO Urdto = mapper.userToUserDto(user);
