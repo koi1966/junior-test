@@ -18,7 +18,7 @@ class ServiceUserTest {
 
     @Test
     void addUsers() {
-        List<User> users = serviceUserTest.searchAllUser();
+        List<User> users = serviceUserTest.findAllUser();
 
         // Assert
         assertThat(users).isNotNull();
@@ -34,7 +34,7 @@ class ServiceUserTest {
         // Act
         serviceUserTest.AddUsers(user);
         // Assert
-        List<User> usersAfterMutations = serviceUserTest.searchAllUser();
+        List<User> usersAfterMutations = serviceUserTest.findAllUser();
         assertThat(usersAfterMutations).isNotNull();
         assertThat(usersAfterMutations).hasSize(21);
     }
@@ -42,7 +42,7 @@ class ServiceUserTest {
     @Test
     void userList() {
 
-        List<User> users = serviceUserTest.searchAllUser();
+        List<User> users = serviceUserTest.findAllUser();
         // Assert
         assertThat(users).isNotNull();
         assertThat(users).hasSize(20);

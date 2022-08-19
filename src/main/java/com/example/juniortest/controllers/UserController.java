@@ -63,7 +63,7 @@ public class UserController {
     @PreAuthorize("hasAuthority('developers:read')")
     public List<UserDTO> searchCountUserInArticle() {
         log.info("All users in article >");
-        List<User> user = serviceUser.searchAllUser();
+        List<User> user = serviceUser.findAllUser();
         return mapper.map(user);
     }
 }

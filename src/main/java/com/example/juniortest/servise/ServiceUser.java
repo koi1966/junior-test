@@ -30,7 +30,7 @@ public class ServiceUser {
         return userRepository.findByUserInArticleCount(cou);
     }
 
-    public List<User> searchAllUser() {
+    public List<User> findAllUser() {
         log.info("Search count all users ");
         return userRepository.findAll();
     }
