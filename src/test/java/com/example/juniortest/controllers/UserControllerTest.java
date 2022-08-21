@@ -1,39 +1,33 @@
 package com.example.juniortest.controllers;
 
+import com.example.juniortest.models.Role;
 import com.example.juniortest.models.Status;
 import com.example.juniortest.models.User;
+import com.example.juniortest.security.JwtTokenProvider;
 import com.example.juniortest.servise.ServiceUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.nio.charset.StandardCharsets;
-import java.util.List;
-
-import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
-import static org.hamcrest.Matchers.hasSize;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-@RestController
-@RequestMapping("/user")
-@EnableGlobalMethodSecurity(prePostEnabled = true)
-//@WebAppConfiguration
+@AutoConfigureMockMvc
 class UserControllerTest {
 
+    @Autowired
     private MockMvc mockMvc;
     @Autowired
-    private ServiceUser serviceUserMock;
+    private JwtTokenProvider jwtTokenProvider;
+    @Autowired
+    private ServiceUser serviceUser;
 
     public static class TestUtil {
 
@@ -58,19 +52,25 @@ class UserControllerTest {
         user.setFirstName("User_1897");
         user.setPassword("123456");
         user.setEmail("uuaa@meta.ua");
+        user.setRole(Role.USER);
 
-        when(serviceUserMock.findAllUser()).thenReturn(List.of(user));
+       User userSave = serviceUser.AddUsers(user);
 
-        mockMvc.perform(get("/userall"))
+        mockMvc.perform(get("/user/userall")
+                        .header("Authorization",
+                                jwtTokenProvider.createToken(userSave.getEmail(),
+                                String.valueOf(userSave.getRole()))))
                 .andExpect(status().isOk())
-                .andExpect((ResultMatcher) content().contentType(TestUtil.APPLICATION_JSON_UTF8))
-                .andExpect((ResultMatcher) jsonPath("$", hasSize(1)))
-                .andExpect((ResultMatcher) jsonPath("$[0].id", is(1)))
-                .andExpect((ResultMatcher) jsonPath("$[0].description", is("Lorem ipsum")))
-                .andExpect((ResultMatcher) jsonPath("$[0].title", is("Foo")));
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$.[0].name").value("admin"))
+                .andExpect(jsonPath("$.[1].name").value("user"));
+//                .andExpect(jsonPath("$"[1]).name").value("sdfs"));
+//                .andExpect(jsonPath("$"[1]).value("sdfs"));
+//                .andExpect(jsonPath("$[0].id", is(1)))
+//                .andExpect(jsonPath("$[0].description", is("Lorem ipsum")))
+//                .andExpect(jsonPath("$[0].title").value("foo"));
 
-        verify(serviceUserMock, times(1)).findAllUser();
-        verifyNoMoreInteractions(serviceUserMock);
+
     }
 
 
