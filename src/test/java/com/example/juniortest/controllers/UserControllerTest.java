@@ -11,9 +11,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.nio.charset.StandardCharsets;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -38,11 +38,6 @@ class UserControllerTest {
     }
 
     @Test
-    void saveUser() throws Exception{
-
-    }
-
-    @Test
     void searchUser() throws Exception {
 
         User user = new User();
@@ -64,21 +59,5 @@ class UserControllerTest {
                 .andExpect(jsonPath("$").isArray())
                 .andExpect(jsonPath("$.[0].name").value("admin"))
                 .andExpect(jsonPath("$.[1].name").value("user"));
-//                .andExpect(jsonPath("$"[1]).name").value("sdfs"));
-//                .andExpect(jsonPath("$"[1]).value("sdfs"));
-//                .andExpect(jsonPath("$[0].id", is(1)))
-//                .andExpect(jsonPath("$[0].description", is("Lorem ipsum")))
-//                .andExpect(jsonPath("$[0].title").value("foo"));
-
-
-    }
-
-
-    @Test
-    void searchCountUserInArticle() {
-    }
-
-    @Test
-    void testSearchCountUserInArticle() {
     }
 }

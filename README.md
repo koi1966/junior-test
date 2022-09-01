@@ -1,14 +1,63 @@
 # junior-test
-Used :
-https://www.baeldung.com/spring-boot-h2-database
-https://www.baeldung.com/mapstruct
-https://www.baeldung.com/java-mapstruct-mapping-collections
-https://stackoverflow.com/questions/47676369/mapstruct-and-lombok-not-working-together
-https://stackoverflow.com/questions/70483299/hibernate-disable-alter-table-to-add-foreign-key-and-disable-alter-table-to-add?noredirect=1&lq=1
-https://stackoverflow.com/questions/221379/hibernate-hbm2ddl-auto-update-in-production
+Postman collection
+postman folder in root project directory
+Run
+mvn clean install
+java -jar target/dropwizard-one-to-many-poc-1.0.jar server configuration.yml
+Queries
+Index :
+curl -X GET http://localhost:8080/index | json_pp
 
-https://java-online.ru/hibernate-entities.xhtml
-https://function-x.ru/sql_subqueries.html
+Find All:
+curl -X GET http://localhost:8080/jedi | json_pp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Окай, потрібно зробити сервер на наступних технологіях: Java 8, Spring Boot, Spring Data, Apache Maven. 
@@ -35,15 +84,6 @@ documentation used:  https://jwt.io/introduction
 To run a job with Spring's Test capabilities that allow you to test applications, documentation 
 used: https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html
 
-
-Залити цей код на GitHub і написати README як проект запускати
-Створити колекцію в Postman або написати запити за допомогою curl тулзи, щоб можна було легко потестувати 
-(залити це в README або будь яким іншим відомим способом)
-
-Якісь приклади можна переглянути скажімо в нас аккаунті компанії 
-Tech1: https://github.com/tech1-io/tech1-temple-java + 
-https://github.com/tech1-io/tech1-skeletons. 
-Якщо буде тобі щось корисне не поскупись на зірочку 🙂
 
 SELECT * FROM USERS
 WHERE ID IN (SELECT
