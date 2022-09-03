@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
+@Transactional
 public class UserRepositoryTest {
 
     private static final long ID = 1L;
@@ -51,7 +53,6 @@ public class UserRepositoryTest {
 
         assertEquals(user.getPassword(), userTest.getPassword());
         assertEquals( user.getEmail(), userTest.getEmail());
-
     }
 
 }

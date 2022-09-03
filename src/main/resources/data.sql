@@ -1,43 +1,26 @@
 INSERT INTO users (name, last_name, email, age, role, status,password)
 VALUES ('admin', 'Klymchyk', 'admin@ukr.net', 25, 'ADMIN', 'ACTIVE','admin');
-INSERT INTO users (name, last_name, email, age, role, status,password)
-VALUES ('user', 'UsrOk', 'user@ukr.net', 35, 'USER', 'ACTIVE','user');
-INSERT INTO users (name, last_name, email, age, role, status,password)
-VALUES ('user2', 'UsrOk2', 'userok2@ukr.net', 45, 'USER', 'BANNED','user2');
-INSERT INTO users (name, age)
-VALUES ('Oliver', 25);
-INSERT INTO users (name, age)
-VALUES ('Jack', 26);
-INSERT INTO users (name, age)
-VALUES ('Harry', 27);
-INSERT INTO users (name, age)
-VALUES ('Jacob', 28);
-INSERT INTO users (name, age)
-VALUES ('Charley', 29);
-INSERT INTO users (name, age)
-VALUES ('Thomas', 29);
-INSERT INTO users (name, age)
-VALUES ('George', 23);
-INSERT INTO users (name, age)
-VALUES ('Charley', 32);
-INSERT INTO users (name, age)
-VALUES ('Oscar', 45);
-INSERT INTO users (name, age)
-VALUES ('Jacob', 51);
-INSERT INTO users (name, age)
-VALUES ('Annie', 20);
-INSERT INTO users (name, age)
-VALUES ('Barbie', 28);
-INSERT INTO users (name, age)
-VALUES ('Rosy', 52);
-INSERT INTO users (name, age)
-VALUES ('Thomas', 49);
-INSERT INTO users (name, age)
-VALUES ('Charley', 45);
-INSERT INTO users (name, age)
-VALUES ('Thomas', 34);
-INSERT INTO users (name, age)
-VALUES ('Megan', 19);
+insert into users (name, last_name, email, age, password) values ('Amalita', 'Offner', 'aoffner0@pcworld.com', 1, 'WM2o3NzTYMas');
+insert into users (name, last_name, email, age, password) values ('Rodge', 'Darmody', 'rdarmody1@slideshare.net', 2, 'XNPRlWr6q');
+insert into users (name, last_name, email, age, password) values ('Lauraine', 'Raywood', 'lraywood2@sbwire.com', 3, 'MIFkjzIUYHr');
+insert into users (name, last_name, email, age, password) values ('Hurley', 'Road', 'hroad3@prweb.com', 4, 'qzJTr32rE');
+insert into users (name, last_name, email, age, password) values ('Denna', 'Marlen', 'dmarlen4@timesonline.co.uk', 5, 'qeXO1ayj');
+insert into users (name, last_name, email, age, password) values ('Elvina', 'Cleminson', 'ecleminson5@surveymonkey.com', 6, 'O7Lhe1yE8ZM');
+insert into users (name, last_name, email, age, password) values ('Brittan', 'Soden', 'bsoden6@fastcompany.com', 7, '1SDb1c');
+insert into users (name, last_name, email, age, password) values ('Toinette', 'Whitefoot', 'twhitefoot7@geocities.jp', 8, 'Q8qRQg52v3s1');
+insert into users (name, last_name, email, age, password) values ('Nils', 'Ablewhite', 'nablewhite8@chron.com', 9, '0jaZCqPGyE');
+insert into users (name, last_name, email, age, password) values ('Josie', 'Ibbison', 'jibbison9@theglobeandmail.com', 10, 't3hn9JDFhf');
+insert into users (name, last_name, email, age, password) values ('Jamesy', 'Shieldon', 'jshieldona@php.net', 11, '8YrW14');
+insert into users (name, last_name, email, age, password) values ('Dorita', 'Russon', 'drussonb@telegraph.co.uk', 12, 'BvPi5tnwk');
+insert into users (name, last_name, email, age, password) values ('Shir', 'O''Conor', 'soconorc@patch.com', 13, 'BtlnOKCs');
+insert into users (name, last_name, email, age, password) values ('Rubie', 'Copcote', 'rcopcoted@microsoft.com', 14, 'w0lOAEUaK9');
+insert into users (name, last_name, email, age, password) values ('Danyelle', 'Carcas', 'dcarcase@bloglines.com', 15, 'vUss84m');
+insert into users (name, last_name, email, age, password) values ('Brianna', 'Thredder', 'bthredderf@ted.com', 16, 'BHvkZqMh9Ijl');
+insert into users (name, last_name, email, age, password) values ('Tammy', 'Bote', 'tboteg@topsy.com', 17, 'zV4knS5P3SpI');
+insert into users (name, last_name, email, age, password) values ('Noemi', 'Touret', 'ntoureth@baidu.com', 18, 'Y81XVE');
+insert into users (name, last_name, email, age, password) values ('Adlai', 'Cowe', 'acowei@blogs.com', 19, 'MoHtqgRfI');
+insert into users (name, last_name, email, age, password) values ('Eve', 'MacNair', 'emacnairj@delicious.com', 20, 'vLBkQIZ');
+
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 1', 'RED', 1);
 INSERT INTO article (text, color, user_id)
