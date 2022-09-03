@@ -1,3 +1,9 @@
+INSERT INTO users (name, last_name, email, age, role, status,password)
+VALUES ('admin', 'Klymchyk', 'admin@ukr.net', 25, 'ADMIN', 'ACTIVE','admin');
+INSERT INTO users (name, last_name, email, age, role, status,password)
+VALUES ('user', 'UsrOk', 'user@ukr.net', 35, 'USER', 'ACTIVE','user');
+INSERT INTO users (name, last_name, email, age, role, status,password)
+VALUES ('user2', 'UsrOk2', 'userok2@ukr.net', 45, 'USER', 'BANNED','user2');
 INSERT INTO users (name, age)
 VALUES ('Oliver', 25);
 INSERT INTO users (name, age)
@@ -112,4 +118,3 @@ INSERT INTO article (text, color, user_id)
 VALUES ('Text 39', 'INDIGO', 3);
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 40', 'VIOLET', 3);
-

@@ -9,10 +9,10 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class ServisesUser {
+public class ServiceUser {
     private final UserRepository userRepository;
 
-    public ServisesUser(UserRepository userRepository) {
+    public ServiceUser(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -28,5 +28,10 @@ public class ServisesUser {
     public List<User> searchUserCountArticle(int cou) {
         log.info("Search count {} ", cou);
         return userRepository.findByUserInArticleCount(cou);
+    }
+
+    public List<User> findAllUser() {
+        log.info("Search count all users ");
+        return userRepository.findAll();
     }
 }
