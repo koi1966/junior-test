@@ -1,43 +1,25 @@
-INSERT INTO users (name, last_name, email, age, role, status,password)
-VALUES ('admin', 'Klymchyk', 'admin@ukr.net', 25, 'ADMIN', 'ACTIVE','admin');
-INSERT INTO users (name, last_name, email, age, role, status,password)
-VALUES ('user', 'UsrOk', 'user@ukr.net', 35, 'USER', 'ACTIVE','user');
-INSERT INTO users (name, last_name, email, age, role, status,password)
-VALUES ('user2', 'UsrOk2', 'userok2@ukr.net', 45, 'USER', 'BANNED','user2');
-INSERT INTO users (name, age)
-VALUES ('Oliver', 25);
-INSERT INTO users (name, age)
-VALUES ('Jack', 26);
-INSERT INTO users (name, age)
-VALUES ('Harry', 27);
-INSERT INTO users (name, age)
-VALUES ('Jacob', 28);
-INSERT INTO users (name, age)
-VALUES ('Charley', 29);
-INSERT INTO users (name, age)
-VALUES ('Thomas', 29);
-INSERT INTO users (name, age)
-VALUES ('George', 23);
-INSERT INTO users (name, age)
-VALUES ('Charley', 32);
-INSERT INTO users (name, age)
-VALUES ('Oscar', 45);
-INSERT INTO users (name, age)
-VALUES ('Jacob', 51);
-INSERT INTO users (name, age)
-VALUES ('Annie', 20);
-INSERT INTO users (name, age)
-VALUES ('Barbie', 28);
-INSERT INTO users (name, age)
-VALUES ('Rosy', 52);
-INSERT INTO users (name, age)
-VALUES ('Thomas', 49);
-INSERT INTO users (name, age)
-VALUES ('Charley', 45);
-INSERT INTO users (name, age)
-VALUES ('Thomas', 34);
-INSERT INTO users (name, age)
-VALUES ('Megan', 19);
+INSERT INTO users (name, last_name, email, age, role, status,password) VALUES ('admin', 'Klymchyk', 'admin@ukr.net', 25, 'ADMIN', 'ACTIVE','admin');
+INSERT INTO users (name, last_name, email, age, role, status,password) VALUES ('user', 'UsrOk', 'user@ukr.net', 35, 'USER', 'ACTIVE','user');
+insert into users (name, last_name, email, age, password) values ('Clair', 'Rosel', 'crosel0@exblog.jp', 1, 'l2c717f6y8i');
+insert into users (name, last_name, email, age, password) values ('Yolane', 'Dougill', 'ydougill1@stanford.edu', 2, 'un457yzQAr');
+insert into users (name, last_name, email, age, password) values ('Padgett', 'Olivetti', 'polivetti2@psu.edu', 3, 'wxyYMb7T4');
+insert into users (name, last_name, email, age, password) values ('Lorine', 'Shipton', 'lshipton3@weebly.com', 4, 'P1KUN4');
+insert into users (name, last_name, email, age, password) values ('Miller', 'Corrison', 'mcorrison4@weather.com', 5, 'iHDe5LO');
+insert into users (name, last_name, email, age, password) values ('Florina', 'Fulham', 'ffulham5@ibm.com', 6, 'ny5bguJ');
+insert into users (name, last_name, email, age, password) values ('Lew', 'Rodders', 'lrodders6@sitemeter.com', 7, '2QZVt14l9');
+insert into users (name, last_name, email, age, password) values ('Clemens', 'Overthrow', 'coverthrow7@qq.com', 8, 'RUhKljjmD96o');
+insert into users (name, last_name, email, age, password) values ('Blane', 'Basketter', 'bbasketter8@multiply.com', 9, 'M2rzXfmggp');
+insert into users (name, last_name, email, age, password) values ('Tandi', 'McElroy', 'tmcelroy9@weebly.com', 10, 'UZTfDYBA');
+insert into users (name, last_name, email, age, password) values ('Mead', 'Kenneford', 'mkenneforda@examiner.com', 11, 'upKce3lP');
+insert into users (name, last_name, email, age, password) values ('Dermot', 'Crome', 'dcromeb@instagram.com', 12, '18rMhVmI7c');
+insert into users (name, last_name, email, age, password) values ('Dwain', 'Balint', 'dbalintc@joomla.org', 13, '0LqIzsbK');
+insert into users (name, last_name, email, age, password) values ('Tabbie', 'Meachen', 'tmeachend@netlog.com', 14, 'Mfy6nfxtb');
+insert into users (name, last_name, email, age, password) values ('Shayne', 'Duggon', 'sduggone@disqus.com', 15, 'C8xwm28dSkTz');
+insert into users (name, last_name, email, age, password) values ('Frazer', 'Greder', 'fgrederf@ask.com', 16, '5r0FFowlzQoF');
+insert into users (name, last_name, email, age, password) values ('Gilbertine', 'McComas', 'gmccomasg@sogou.com', 17, 'EDCA0isNGu8G');
+insert into users (name, last_name, email, age, password) values ('Wynny', 'Libby', 'wlibbyh@photobucket.com', 18, 'ZXs108wV');
+insert into users (name, last_name, email, age, password) values ('Ermengarde', 'Scatcher', 'escatcheri@wiley.com', 19, 'FDVlJ97aMK');
+insert into users (name, last_name, email, age, password) values ('Bondy', 'Goman', 'bgomanj@skyrock.com', 20, '8HtNr8EV');
 INSERT INTO article (text, color, user_id)
 VALUES ('Text 1', 'RED', 1);
 INSERT INTO article (text, color, user_id)
